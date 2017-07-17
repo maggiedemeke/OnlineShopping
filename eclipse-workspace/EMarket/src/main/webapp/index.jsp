@@ -7,6 +7,25 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form id = "formId" action = "BrowseAndSelectController" method= "Get">
+<h1> Welcome to your online shop</h1>
+    <div class="navigationbar" id="myNavbar">
+            <ul >
+                <li class="home-nav-link active"><a href="index">Home</a></li>
+         		<li class="browselink"><a href="BrowseAndSelectController">Browse Products</a></li>
+                <li class="shopping-cart-nav-link"><a href="shoppingcart"> Shopping Cart  </a></li>
+                
+                
+            </ul>
+                 <ul>
+                <li><a href="/login"><spa></span>
+                        Login
+                    </a></li>
+                <li> <a href="/logout">
+                    Logout</a></li>
+            </ul>
+        </div>
+ </form>
 
 </body>
 </html>
