@@ -23,11 +23,11 @@
 </form>
 </div>
 
-<form action = "shoppingcart" method ="post">
+<form action = "ShoppingCartController" method ="post">
 <fieldset>
 <legend> </legend>
 //<input  type= button name= "Savetocart" value = "Save to Cart"/>
-<li><a href="shoppingcart">Save to Cart</a></li>
+
 
 </fieldset>
 </form>

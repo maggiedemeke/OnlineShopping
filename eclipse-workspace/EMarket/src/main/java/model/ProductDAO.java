@@ -10,10 +10,12 @@ public class ProductDAO {
 	public List<Product> read() {
 		
 		List<Product> prolist = new ArrayList<Product>();
-		prolist.add(new Product("Lotion", 5, 200.0, Catagory.Cloth));
-		prolist.add(new Product("Bra", 5, 200.0, Catagory.Cloth));
-		prolist.add(new Product("readme",5, 200.0, Catagory.Book));
-		prolist.add(new Product("another" ,5, 200.0, Catagory.Cloth));
+		Product sunglass = new Product("Lotion", 5, 200.0, Catagory.Cloth);
+		sunglass.setLink("images/sunglasses.jpg");
+		prolist.add(sunglass);
+		Product book= new Product("readme",5, 200.0, Catagory.Book);
+		book.setLink("images/sunglasses.jpg");
+		
 			
 		
 		return prolist;

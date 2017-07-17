@@ -3,18 +3,15 @@ package model;
 import java.util.List;
 
 public class ShoppingCart {
-	private int cartId;
+	private static int cartId= 0;
 	List<Product>products;
-	public ShoppingCart(int cartId) {
-		super();
-		this.cartId = cartId;
+	public ShoppingCart() {
+	
 	}
 	public int getCartId() {
-		return cartId;
+		return cartId++;
 	}
-	public void setCartId(int cartId) {
-		this.cartId = cartId;
-	}
+
 	public List<Product> getProducts() {
 		return products;
 	}
