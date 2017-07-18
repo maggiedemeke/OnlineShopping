@@ -24,6 +24,8 @@ public class BrowseAndSelectController extends HttpServlet {
 		HttpSession session = request.getSession();
 		ProductDAO productList = new ProductDAO();
 		List<Product> proList = productList.read();
+		int listcount = proList.size();
+		request.getSession().setAttribute("rownumber", listcount);
 	
 
 		request.getSession().setAttribute("products", proList);

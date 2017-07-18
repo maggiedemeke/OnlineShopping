@@ -5,30 +5,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>EMarket</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/header_template.jsp" />
+
+
 <h1>EMarket</h1>
 <div class = "list">
-<form action= "browseandselectcontroller" method = "get">
-<table id = "table">
-<tr>  <th>    </th> <th>ProductName</th><th>Date</th><th>Amount</th></tr>
-<c:forEach var="Product" items="${products}" >
-<tr>
+<c:set var="product_count" value="0" scope="page"/>
+                <c:forEach var="Product"  items="${products}">
+                    <c:if test="${product_count % 3 == 0}"><div class="row"></c:if>
+              		<%-- <c:set var="product" value="${product}" scope="session" /> --%>
+                   <a href="ProductDetailController">
+                   <img src="<c:url value="${Product.link}"/>"  name = "aProduct" width="300" height = "200" 
+                    alt= "product image" class="img-thumbnail" class="img-responsive" /></a>
+                    <c:if test="${product_count % 3 == 2}"></div></c:if>
+                    <c:set var="product_count" value="${product_count + 1}" scope="page"/>
+                </c:forEach>
 
- <td> <input type = "checkbox" value = ${Product.id} name = "checkbox" /> </td> <td> ${Product.name}</td> <td>${Product.price}</td>  <td>${Product.catagory} </td>
-</tr>
-</c:forEach>
-</table>
-</form>
 </div>
 
 <form action = "ShoppingCartController" method ="post">
 <fieldset>
 <legend> </legend>
-//<input  type= button name= "Savetocart" value = "Save to Cart"/>
-
-
+<input  type= button name= "addtocart" value = "Add to Cart"/>
 </fieldset>
 </form>
 </body>
