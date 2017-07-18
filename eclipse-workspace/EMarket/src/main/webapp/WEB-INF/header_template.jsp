@@ -68,7 +68,7 @@
                 <li><a href="<c:url value="${profile_link}" />"><span class="glyphicon glyphicon-user"></span>
                         ${welcome_msg}
                     </a></li>
-                <li><a href="<c:url value="/logout" />"><span class="glyphicon glyphicon-log-out"></span>
+                <li><a href="<c:url value="/LogoutController" />"><span class="glyphicon glyphicon-log-out"></span>
                     Logout</a></li>
             </ul>
         </div>

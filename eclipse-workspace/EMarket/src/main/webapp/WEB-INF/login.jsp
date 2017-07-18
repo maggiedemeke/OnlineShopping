@@ -7,15 +7,22 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div>
+<jsp:include page="header_template.jsp" />
+</div>
+
+<div>
+<pre>
+
+
+</pre>
 <form action="LoginController" method="post">  
 Name:<input type="text" name="name"><br>  
 Password:<input type="password" name="password"><br>  
 <p>
 <input type="submit" value="login">  
 </p>
-<p>
-<a href="index.jsp">back</a>
-</p>
 </form>
+</div>
 </body>
 </html>
