@@ -41,14 +41,15 @@ public class LoginController extends HttpServlet {
         String password=request.getParameter("password");  
           
         if(password.equals("admin") && name.equals("admin")){  
-        out.print("Welcome, "+name);  
+        	request.getRequestDispatcher("/WEB-INF/header_template.jsp").include(request, response); 
+        out.print("</br></br></br></br> Welcome, "+name);  
         HttpSession session=request.getSession();  
         session.setAttribute("name",name);  
         }  
         else{  
             request.getRequestDispatcher("/WEB-INF/login.jsp").include(request, response);  
             out.print("<p>Sorry, username or password error!</p>");  
-            out.print("if you are a new user, please register");
+            out.print("if you are a new user, please <a href=\"RegistrationController\">register</a>");
         }  
 }
 }

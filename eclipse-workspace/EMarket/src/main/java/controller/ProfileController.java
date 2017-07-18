@@ -31,14 +31,21 @@ public class ProfileController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");  
         PrintWriter out=response.getWriter();  
-           
         request.getRequestDispatcher("/WEB-INF/header_template.jsp").include(request, response); 
-        out.print("</br></br></br></br>this is profile page!");  
+        
+ HttpSession session=request.getSession(false);  
+        
+        String name=(String)session.getAttribute("name"); 
+        if(name!=null){            
+        	request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response); 
+        }  
+        
+        else{  
+            request.getRequestDispatcher("/WEB-INF/login.jsp").include(request, response); 
+            out.print("<p>Please login first</p>");  
+        }  
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		// TODO Auto-generated method stub
 //		doGet(request, response);

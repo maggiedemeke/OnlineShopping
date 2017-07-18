@@ -7,11 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div>
 <jsp:include page="header_template.jsp" />
-</div>
-
-<div>
 <pre>
 
 
@@ -23,6 +19,5 @@ Password:<input type="password" name="password"><br>
 <input type="submit" value="login">  
 </p>
 </form>
-</div>
 </body>
 </html>
