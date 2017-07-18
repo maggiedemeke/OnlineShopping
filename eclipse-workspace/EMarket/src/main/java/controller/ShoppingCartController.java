@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Product;
 import model.ShoppingCart;
 
 /**
@@ -16,15 +17,6 @@ import model.ShoppingCart;
  */
 @WebServlet("/ShoppingCartController")
 public class ShoppingCartController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ShoppingCartController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,9 +26,22 @@ public class ShoppingCartController extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ShoppingCart cart = new ShoppingCart();
-		cart.getCartId();
 		
+		if(request.getParameter("name").equals("addtocart")) {
+			ShoppingCart cart = new ShoppingCart();
+			int cartId = cart.getCartId();	
+			cart.addProduct((Product)request.getSession().getAttribute("aProduct"));
+			request.getSession().setAttribute("cartItem", cart);
+			request.getRequestDispatcher("/WEB-INF/productdetail.jsp").forward(request, response);
+			
+		}
+		
+		if(request.getParameter("name").equals("back")) {
+			request.getRequestDispatcher("/WEB-INF/browseandselect.jsp").forward(request, response);
+		}
+		if(request.getParameter("name").equals("cart")) {
+			request.getRequestDispatcher("/WEB-INF/shoppingcart.jsp").forward(request, response);
+		}
 		
 	}
 

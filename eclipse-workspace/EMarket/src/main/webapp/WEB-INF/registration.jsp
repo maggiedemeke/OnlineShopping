@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="header_template.jsp" />
-<pre>
 
-
-</pre>
-this is registration page
 </body>
 </html>
