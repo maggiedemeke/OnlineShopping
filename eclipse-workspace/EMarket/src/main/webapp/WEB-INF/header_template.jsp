@@ -65,6 +65,8 @@
                 </c:otherwise>
             </c:choose>
             <ul class="nav navbar-nav navbar-right">
+            <li><a href="<c:url value="/ProfileController" />"><span ></span>
+                    Profile</a></li>
                 <li><a href="<c:url value="${profile_link}" />"><span class="glyphicon glyphicon-user"></span>
                         ${welcome_msg}
                     </a></li>
